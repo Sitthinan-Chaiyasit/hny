@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>สุขสันต์วันปีใหม่ 2026 นะค้าบเอมมี่</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* หน้าที่ 1 - สุขสันต์วันปีใหม่ */
+        #page1 {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .firework {
+            position: absolute;
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            animation: explode 1s ease-out infinite;
+        }
+
+        @keyframes explode {
+            0% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+            100% {
+                transform: translate(var(--tx), var(--ty));
+                opacity: 0;
+            }
+        }
+
+        .content1 {
+            text-align: center;
+            color: white;
+            z-index: 10;
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 4em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            animation: glow 2s ease-in-out infinite;
+        }
+
+        @keyframes glow {
+            0%, 100% { text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff; }
+            50% { text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff; }
+        }
+
+        .year {
+            font-size: 6em;
+            font-weight: bold;
+            background: linear-gradient(45deg, #ffd700, #ffed4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .btn {
+            margin-top: 30px;
+            padding: 15px 40px;
+            font-size: 1.2em;
+            background: white;
+            color: #667eea;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* หน้าที่ 2 - ใส่รหัสผ่าน */
+        #page2 {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .lock-icon {
+            font-size: 5em;
+            margin-bottom: 20px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .content2 {
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+
+        h2 {
+            color: #f5576c;
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        input[type="password"] {
+            padding: 15px;
+            font-size: 1.2em;
+            border: 2px solid #f5576c;
+            border-radius: 10px;
+            width: 300px;
+            margin: 20px 0;
+            text-align: center;
+        }
+
+        .error {
+            color: red;
+            margin-top: 10px;
+            display: none;
+        }
+
+        /* หน้าที่ 3 - การบอกรัก */
+        #page3 {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .heart {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: red;
+            transform: rotate(45deg);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .heart::before,
+        .heart::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: red;
+            border-radius: 50%;
+        }
+
+        .heart::before {
+            left: -25px;
+        }
+
+        .heart::after {
+            top: -25px;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: rotate(45deg) translateY(0); }
+            50% { transform: rotate(45deg) translateY(-20px); }
+        }
+
+        .content3 {
+            background: white;
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            text-align: center;
+            z-index: 10;
+            max-width: 600px;
+        }
+
+        .love-text {
+            font-size: 2.5em;
+            color: #ff6b9d;
+            margin: 20px 0;
+            line-height: 1.5;
+        }
+
+        .big-heart {
+            font-size: 5em;
+            color: #ff6b9d;
+            animation: heartbeat 1.5s infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+        }
+
+        /* 3D รูป - หน้า 3 */
+        .cards-container {
+            position: absolute;
+            inset: 0;
+            pointer-events: auto; /* allow interaction to upload/reset images */
+            z-index: 5;
+            overflow: hidden;
+        }
+
+        .card3d {
+            position: absolute;
+            width: 120px;
+            height: 160px;
+            border-radius: 12px;
+            background: linear-gradient(145deg, #ffffff, #f3f3f3);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
+            transform-style: preserve-3d;
+            backface-visibility: hidden;
+            transition: transform 0.6s, box-shadow 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            will-change: transform, left, top;
+            animation: floatCard 6s ease-in-out infinite;
+        }
+
+        .card3d svg { width: 80%; height: auto; transform: translateZ(30px) rotateY(-10deg); }
+
+        @keyframes floatCard {
+            0%,100% { transform: translateY(0) rotateY(0deg); }
+            50% { transform: translateY(-20px) rotateY(10deg); }
+        }
+
+        .card3d:hover {
+            transform: rotateY(15deg) translateZ(30px) scale(1.05);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+        }
+
+        /* รูปภาพภายในการ์ด (เมื่ออัปโหลดเป็น PNG) */
+        .card3d img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 12px;
+            transform: translateZ(30px);
+            display: block;
+        }
+
+        /* ปุ่มแก้ไข / รีเซ็ต */
+        .edit-btn, .reset-btn {
+            position: absolute;
+            top: 8px;
+            width: 30px;
+            height: 30px;
+            border-radius: 6px;
+            border: none;
+            background: rgba(255,255,255,0.9);
+            color: #333;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+            cursor: pointer;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: auto;
+        }
+
+        .edit-btn { right: 8px; }
+        .reset-btn { right: 44px; }
+
+        .edit-btn:hover, .reset-btn:hover { transform: scale(1.05); }
+
+        .cardContent { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+    </style>
+</head>
+<body>
+    <!-- หน้าที่ 1 -->
+    <div id="page1">
+        <div class="content1">
+            <h1>🎊 สุขสันต์วันปีใหม่ นะค้าบเอมมี่ 🎊</h1>
+            <div class="year">2026</div>
+            <p style="font-size: 1.5em; margin-top: 20px;">ขอให้เอมมี่น่ารักแบบนี้ตลอดไปนะคั้บบ</p>
+            <button class="btn" onclick="goToPage2()">ถัดไป ➜</button>
+        </div>
+    </div>
+
+    <!-- หน้าที่ 2 -->
+    <div id="page2">
+        <div class="lock-icon">🔒</div>
+        <div class="content2">
+            <h2>กรุณาใส่รหัสผ่าน</h2>
+            <p>เพื่อดูข้อความพิเศษ</p>
+            <input type="password" id="password" placeholder="รหัสผ่าน" onkeypress="checkEnter(event)">
+            <br>
+            <button class="btn" onclick="checkPassword()">เข้าสู่ระบบ</button>
+            <p class="error" id="error">❌ รหัสผ่านไม่ถูกต้อง</p>
+        </div>
+    </div>
+
+    <!-- หน้าที่ 3 -->
+    <div id="page3">
+        <div class="content3">
+            <div class="big-heart">❤️</div>
+            <div class="love-text">
+                รักเอมมี่นะค้าบ
+            </div>
+            <p style="font-size: 1.3em; color: #666; margin-top: 20px;">
+                ในวันปีใหม่นี้ ฉันอยากบอกว่า<br>
+                แกคือคนพิเศษที่สุดในชีวิตเค้า<br>
+                ขอให้เราอยูู่ด้วยกันไปนานๆ นะ
+            </p>
+            <div class="big-heart" style="font-size: 3em; margin-top: 20px;">💕</div>
+        </div>
+        <div class="cards-container" id="cardsContainer" aria-hidden="false"></div>
+        <!-- Hidden file input for uploading PNGs to replace cards -->
+        <input type="file" id="cardUploader" accept="image/png" style="display:none" aria-hidden="true">
+    </div>
+
+    <script>
+        // สร้างดอกไม้ไฟ
+        function createFireworks() {
+            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
+            setInterval(() => {
+                for(let i = 0; i < 30; i++) {
+                    const firework = document.createElement('div');
+                    firework.className = 'firework';
+                    firework.style.left = Math.random() * 100 + '%';
+                    firework.style.top = Math.random() * 100 + '%';
+                    firework.style.background = colors[Math.floor(Math.random() * colors.length)];
+                    firework.style.setProperty('--tx', (Math.random() - 0.5) * 200 + 'px');
+                    firework.style.setProperty('--ty', (Math.random() - 0.5) * 200 + 'px');
+                    document.getElementById('page1').appendChild(firework);
+                    setTimeout(() => firework.remove(), 1000);
+                }
+            }, 1000);
+        }
+
+        // สร้างหัวใจลอย
+        function createHearts() {
+            setInterval(() => {
+                const heart = document.createElement('div');
+                heart.className = 'heart';
+                heart.style.left = Math.random() * 100 + '%';
+                heart.style.top = Math.random() * 100 + '%';
+                heart.style.animationDelay = Math.random() * 2 + 's';
+                heart.style.opacity = Math.random() * 0.5 + 0.3;
+                document.getElementById('page3').appendChild(heart);
+                setTimeout(() => heart.remove(), 3000);
+            }, 500);
+        }
+
+        // สร้างรูป 3D จำนวน 5 รูป (placeholder SVG แบบง่าย) และรองรับการอัปโหลด PNG
+        function create3DImages() {
+            const container = document.getElementById('cardsContainer');
+            const uploader = document.getElementById('cardUploader');
+            if(!container || !uploader) return;
+            container.innerHTML = '';
+            uploader.value = '';
+            uploader.onchange = null; // reset handler
+            const colors = ['#ff9a9e','#a18cd1','#fbc2eb','#ffecd2','#cfd9df'];
+            // ตำแหน่งคงที่รอบๆ modal เพื่อให้การ์ดไม่บังกันและไม่บัง modal
+            const fixedPositions = [
+                { l: '8%', t: '12%' },  // top-left
+                { l: '72%', t: '10%' }, // top-right
+                { l: '72%', t: '62%' }, // bottom-right
+                { l: '8%', t: '62%' },  // bottom-left
+                { l: '44%', t: '76%' }  // bottom-center
+            ];
+
+            for(let i=0;i<5;i++){
+                const card = document.createElement('div');
+                card.className = 'card3d';
+                card.dataset.index = i;
+                // ใช้ตำแหน่งคงที่จาก array เพื่อหลีกเลี่ยงการทับซ้อน
+                const pos = fixedPositions[i % fixedPositions.length];
+                card.style.left = pos.l;
+                card.style.top = pos.t;
+                card.style.animationDelay = (Math.random() * 3) + 's';
+                card.style.zIndex = 6; // ให้อยู่ใต้ modal (content3 z-index:10) แต่เหนือ background
+                const svg = `
+                    <svg viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <linearGradient id="g${i}" x1="0" x2="1">
+                                <stop offset="0" stop-color="${colors[i%colors.length]}"/>
+                                <stop offset="1" stop-color="#ffffff"/>
+                            </linearGradient>
+                        </defs>
+                        <rect x="5" y="5" rx="10" ry="10" width="90" height="120" fill="url(#g${i})" stroke="rgba(0,0,0,0.06)" />
+                        <circle cx="50" cy="45" r="20" fill="#ffffff" opacity="0.7"/>
+                        <text x="50" y="105" text-anchor="middle" font-size="14" fill="#333">รูป ${i+1}</text>
+                    </svg>
+                `;
+                const content = document.createElement('div');
+                content.className = 'cardContent';
+                content.innerHTML = svg;
+
+                // ปุ่มแก้ไข (อัปโหลด PNG)
+                const editBtn = document.createElement('button');
+                editBtn.className = 'edit-btn';
+                editBtn.type = 'button';
+                editBtn.title = 'แก้ไขรูป (PNG)';
+                editBtn.textContent = '✎';
+                editBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    uploader.dataset.target = i;
+                    uploader.click();
+                });
+
+                // ปุ่มรีเซ็ต (กลับไปเป็น placeholder)
+                const resetBtn = document.createElement('button');
+                resetBtn.className = 'reset-btn';
+                resetBtn.type = 'button';
+                resetBtn.title = 'รีเซ็ตรูป';
+                resetBtn.textContent = '✕';
+                resetBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const cc = card.querySelector('.cardContent');
+                    const img = cc.querySelector('img');
+                    if(img && img.src.startsWith('blob:')) URL.revokeObjectURL(img.src);
+                    cc.innerHTML = svg;
+                });
+
+                // เมื่อเลือกไฟล์ ให้ใส่ลงในการ์ดที่ระบุ
+                uploader.onchange = function() {
+                    const files = this.files;
+                    if(!files || !files[0]) return;
+                    const file = files[0];
+                    if(file.type !== 'image/png'){
+                        alert('โปรดเลือกไฟล์ PNG เท่านั้น');
+                        this.value = '';
+                        return;
+                    }
+                    const idx = this.dataset.target;
+                    const targetCard = container.querySelector(`.card3d[data-index="${idx}"]`);
+                    if(!targetCard) return;
+                    const imgUrl = URL.createObjectURL(file);
+                    const img = document.createElement('img');
+                    img.src = imgUrl;
+                    img.alt = `รูป ${parseInt(idx)+1}`;
+                    const cc = targetCard.querySelector('.cardContent');
+                    cc.innerHTML = '';
+                    cc.appendChild(img);
+                    this.value = '';
+                };
+
+                card.appendChild(content);
+                card.appendChild(editBtn);
+                card.appendChild(resetBtn);
+                container.appendChild(card);
+            }
+        }
+
+        function goToPage2() {
+            document.getElementById('page1').style.display = 'none';
+            document.getElementById('page2').style.display = 'flex';
+        }
+
+        function checkPassword() {
+            const password = document.getElementById('password').value;
+            if(password === '17072025') { // เปลี่ยนรหัสผ่านตามต้องการ
+                document.getElementById('page2').style.display = 'none';
+                document.getElementById('page3').style.display = 'flex';
+                createHearts();
+                create3DImages();
+            } else {
+                document.getElementById('error').style.display = 'block';
+            }
+        }
+
+        function checkEnter(event) {
+            if(event.key === 'Enter') {
+                checkPassword();
+            }
+        }
+
+        createFireworks();
+    </script>
+</body>
+</html>
